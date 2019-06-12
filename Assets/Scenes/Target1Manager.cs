@@ -45,4 +45,5 @@ public class Target1Manager : MonoBehaviour {
 			Destroy(targetClone);
 		}
 	}
+ 
 }

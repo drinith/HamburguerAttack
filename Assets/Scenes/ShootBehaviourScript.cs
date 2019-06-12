@@ -33,7 +33,7 @@ public class ShootBehaviourScript : MonoBehaviour
     {
 
         Destroy(gameObject);
-        print("Chegou aqui");
+     
 
     }
 }

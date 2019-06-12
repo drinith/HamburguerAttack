@@ -22,14 +22,14 @@ public class AutoDestroyBehaviourScript : MonoBehaviour
     {
         if (gameObject.name=="Target1(Clone)"){
             Destroy(gameObject);
-            Debug.Log(name + " is out!"); // This line prints!
+           
         }
     }
 
     void sair(){
         if(gameObject.transform.position.z>20 | gameObject.transform.position.z<-20 & gameObject.name!="hamburguer"){
             Destroy(gameObject);
-            Debug.Log(name + "Saiu"); // This line prints
+           
             
         }
     }
