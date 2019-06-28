@@ -1,15 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class AutoDestroyBehaviourScript : MonoBehaviour
 {
     // Start is called before the first frame update
 
+    public Text Vida;
     
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -27,10 +27,11 @@ public class AutoDestroyBehaviourScript : MonoBehaviour
     }
 
     void sair(){
-        if(gameObject.transform.position.z>20 | gameObject.transform.position.z<-20 & gameObject.name!="hamburguer"){
+        
+        if(gameObject.transform.position.z>20 | gameObject.transform.position.z<-20 & gameObject.name!="hamburguer" ){
+            Vida.text=(int.Parse(Vida.text)-1).ToString();
             Destroy(gameObject);
-           
-            
+                       
         }
     }
 
