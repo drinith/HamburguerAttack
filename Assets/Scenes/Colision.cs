@@ -6,7 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class Colision : MonoBehaviour
 {
+    public AudioSource gotaSound;
 
+    
     public Text textPonto;
 
     public Text vida;
@@ -23,19 +25,25 @@ public class Colision : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         textPonto.text=textPonto.text;
         pontosVida=(int.Parse(vida.text));
         print(pontosVida);
         if(pontosVida<=0){
+                
                 Invoke("endGame",2f);
+                
                 
         }
     }
 
     void endGame(){
         SceneManager.LoadScene("fim");
+                
                 print("muda cena");
     }
+
+    
 
     void OnCollisionEnter (Collision col)
     {
@@ -46,7 +54,7 @@ public class Colision : MonoBehaviour
             Destroy(col.gameObject);
             Destroy(gameObject);
             textPonto.text=(int.Parse(textPonto.text)+1).ToString();
-              
+            gotaSound.Play();  
             
         }
 
