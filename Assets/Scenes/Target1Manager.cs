@@ -6,12 +6,12 @@ public class Target1Manager : MonoBehaviour {
 
 //	public PlayerHealth playerHealth;
 	public GameObject target;
-	public GameObject targetClone;
+	
 	public float spawnTime = 3f;
 	public Transform[] spawnPoints;
 	Vector3 whereToSpawn ;
 
-
+	public float speed;
 	void Start(){
 
 		
@@ -21,7 +21,6 @@ public class Target1Manager : MonoBehaviour {
 	}
 
 	void Update(){
-
 		
 	}
 
@@ -39,13 +38,19 @@ public class Target1Manager : MonoBehaviour {
 
 		whereToSpawn = new Vector3 (randX, 0f, 19.5f);
 		// Create an instance of the enemy prefab at the randomly selected spawn point's position and rotation.
-		targetClone=(GameObject) Instantiate (target, whereToSpawn, Quaternion.identity);
-
-
-		if (Mathf.Abs(targetClone.transform.position.x) >= 100 || Mathf.Abs(targetClone.transform.position.z) >= 100)
+		GameObject clone= (GameObject)Instantiate (target, whereToSpawn, Quaternion.identity);
+		move(clone);
+		print(clone.name);
+		
+		if (Mathf.Abs(clone.transform.position.x) >= 100 || Mathf.Abs(clone.transform.position.z) >= 100)
 		{
-			Destroy(targetClone);
+			Destroy(clone);
 		}
+	}
+
+	void move(GameObject clone)
+	{
+	
 	}
  
 }

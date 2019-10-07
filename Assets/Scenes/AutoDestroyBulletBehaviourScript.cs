@@ -18,8 +18,10 @@ public class AutoDestroyBulletBehaviourScript : MonoBehaviour
 
     void OnBecameInvisible()
     {
+        print("OnBecameInvisible "+gameObject.name);
         if (gameObject.name=="Target1(Clone)"){
             Destroy(gameObject);
+        
            
         }
     }
